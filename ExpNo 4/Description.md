@@ -1,6 +1,6 @@
 <h1>ExpNo 4 : Implement Simple Hill Climbing Algorithm</h1> 
-<h3>Name: Saravanan N</h3>
-<h3>Register Number/Staff Id: TSML006</h3>
+<h3>Name: Balaji K </h3>
+<h3>Register Number: 212221230011</h3>
 <H3>Aim:</H3>
 <p>Implement Simple Hill Climbing Algorithm and Generate a String by Mutating a Single Character at each iteration </p>
 <h2> Theory: </h2>
@@ -27,7 +27,7 @@ Feedback is provided in terms of heuristic function
 </ol>
 
 </p>
-<hr>
+
 <h3> Steps Applied:</h3>
 <h3>Step-1</h3>
 <p> Generate Random String of the length equal to the given String</p>
@@ -36,26 +36,63 @@ Feedback is provided in terms of heuristic function
 <h3>Step-3</h3>
 <p> Evaluate the fitness function or Heuristic Function</p>
 <h3>Step-4:</h3>
-<p> Lopp Step -2 and Step-3  until we achieve the score to be Zero to achieve Global Minima.</p>
+<p> Loop Step -2 and Step-3  until we achieve the score to be Zero to achieve Global Minima.</p>
 
-<hr>
-<h2>Sample Input and Output</h2>
-<h2>Sample String:</h2> Artificial Intelligence
+<h3>Program:</h3>
+
+```
+import random
+import string
+def generate_random_solution(answer):
+    l=len(answer)
+    return [random.choice(string.printable) for _ in range(l)]
+def evaluate(solution,answer):
+    print(solution)
+    target=list(answer)
+    diff=0
+    for i in range(len(target)):
+        s=solution[i]
+        t=target[i]
+        diff +=abs(ord(s)-ord(t))
+    return diff
+def mutate_solution(solution):
+    ind=random.randint(0,len(solution)-1)
+    solution[ind]=random.choice(string.printable)
+    return solution
+def SimpleHillClimbing():
+    answer="Artificial Intelligence"
+    best=generate_random_solution(answer)
+    best_score=evaluate(best,answer)
+    while True:
+        print("Score:",best_score," Solution : ","".join(best))
+        if best_score==0:
+            break
+        new_solution=mutate_solution(list(best))
+        score=evaluate(new_solution,answer)
+        if score<best_score:
+            best=new_solution
+            best_score=score
+#answer="Artificial Intelligence"
+#print(generate_random_solution(answer))
+#solution=generate_random_solution(answer)
+#print(evaluate(solution,answer))
+```
+
+<h2>Input and Output</h2>
+<h2>String: Artificial Intelligence</h2> 
 <h2>Output:</h2>
-Score: 643  Solution :  8RzF:oG ]%;CPORRMe!zGvk<br>
-Score: 609  Solution :  8RzF:oG ]%;CPqRRMe!zGvk<br>
-Score: 604  Solution :  8RzF:oG ]%;CPqRRMe!zGqk<br>
-Score: 594  Solution :  8RzF:oG ]%;CPqRRWe!zGqk<br>
-Score: 551  Solution :  8RzF:oGK]%;CPqRRWe!zGqk<br>
-Score: 551  Solution :  8RzF:oGK]%;CPqRRWe!zGqk<br>
-Score: 551  Solution :  8RzF:oGK]%;CPqRRWe!zGqk<br>
-Score: 551  Solution :  8RzF:oGK]%;CPqRRWe!zGqk<br>
-Score: 551  Solution :  8RzF:oGK]%;CPqRRWe!zGqk<br>
-....................................................<br>
-..................................................<br>
-................................................<br>
-Score: 1  Solution :  Artificial Intelligencf<br>
-Score: 1  Solution :  Artificial Intelligencf<br>
-Score: 1  Solution :  Artificial Intelligencf<br>
-Score: 1  Solution :  Artificial Intelligencf<br>
-Score: 0  Solution :  Artificial Intelligence<br>
+
+![image](https://github.com/SaiDarshan2003/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/94692595/67cd836b-b490-4165-a004-3cc048af1a79)
+
+.
+
+.
+
+.
+
+![image](https://github.com/SaiDarshan2003/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/94692595/d3a9eac3-9476-4b58-8af4-e431240158c9)
+
+
+Result:
+
+Thus,a string was constructed and implementation of Simple Hill Climbing was done successfully.
