@@ -1,8 +1,8 @@
 <h1>ExpNo 1 : Implement Depth First Search Traversal of a Graph</h1> 
 
-<h3>Name: Balaji K</h3>
+<h3>Name:Lathika Sunder</h3>
 
-<h3>Register Number: 212221230011</h3>
+<h3>Register Number: 212221230054</h3>
 
 <H3>Aim:</H3>
 
