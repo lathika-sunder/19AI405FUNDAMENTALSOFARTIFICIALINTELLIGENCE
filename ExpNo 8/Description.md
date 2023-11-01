@@ -1,6 +1,6 @@
 <h1>ExpNo 8 : Solve Wumpus World Problem using Python demonstrating Inferences from Propositional Logic</h1> 
-<h3>Name: Balaji K</h3>
-<h3>Register Number: 212221230011</h3>
+<h3>Name: Lathika Sunder</h3>
+<h3>Register Number: 212221230054</h3>
 
 <h3>Aim:</h3>
 <p>
